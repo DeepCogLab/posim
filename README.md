@@ -32,7 +32,6 @@
 </p>
 
 <p align="center">
-  📄 <a href="#">Paper (Under Review)</a>  | 
   🌐 <a href="https://DeepCogLab.github.io/posim/">Homepage</a>  | 
   🐛 <a href="https://github.com/DeepCogLab/posim/issues">Issues</a>
 </p>

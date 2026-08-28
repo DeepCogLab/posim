@@ -101,31 +101,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// ---------- Copy BibTeX ----------
-function copyBibtex() {
-  const code = document.getElementById('bibtexCode').textContent;
-  navigator.clipboard.writeText(code).then(() => {
-    const btn = document.getElementById('copyBtn');
-    btn.textContent = currentLang === 'cn' ? '已复制 ✓' : 'Copied ✓';
-    btn.style.background = 'rgba(34,197,94,0.3)';
-    setTimeout(() => {
-      btn.textContent = currentLang === 'cn' ? '复制' : 'Copy';
-      btn.style.background = '';
-    }, 2000);
-  }).catch(() => {
-    const textarea = document.createElement('textarea');
-    textarea.value = code;
-    textarea.style.cssText = 'position:fixed;opacity:0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-    const btn = document.getElementById('copyBtn');
-    btn.textContent = currentLang === 'cn' ? '已复制 ✓' : 'Copied ✓';
-    setTimeout(() => { btn.textContent = currentLang === 'cn' ? '复制' : 'Copy'; }, 2000);
-  });
-}
-
 // ---------- Scroll Reveal with stagger ----------
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

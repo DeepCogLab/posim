@@ -924,39 +924,6 @@ section:nth-child(even) {
   margin-top: 10px;
 }
 
-/* ---------- Code / BibTeX ---------- */
-.bibtex-wrap {
-  background: #1e293b;
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  position: relative;
-  max-width: 700px;
-  margin: 24px auto 0;
-}
-.bibtex-wrap pre {
-  color: #e2e8f0;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  line-height: 1.6;
-  overflow-x: auto;
-  white-space: pre;
-}
-.copy-btn {
-  position: absolute;
-  top: 12px; right: 12px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #e2e8f0;
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all var(--transition);
-  font-family: var(--font-sans);
-}
-.copy-btn:hover { background: rgba(255,255,255,0.2); }
-
 /* ---------- Project Structure ---------- */
 .structure-tree {
   background: #1e293b;

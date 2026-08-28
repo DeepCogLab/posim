@@ -32,7 +32,6 @@
 </p>
 
 <p align="center">
-  📄 <a href="#">论文（审稿中）</a>  | 
   🌐 <a href="https://DeepCogLab.github.io/posim/">主页</a>  | 
   🐛 <a href="https://github.com/DeepCogLab/posim/issues">Issues</a>
 </p>
