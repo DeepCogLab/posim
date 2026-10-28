@@ -43,6 +43,7 @@
 - [💡 Why POSIM?](#-why-posim)
 - [✨ Key Features](#-key-features)
 - [🚧 Project Status](#-project-status)
+- [📊 Datasets](#-datasets)
 - [🏗️ Framework Overview](#%EF%B8%8F-framework-overview)
 - [⚙️ Installation](#%EF%B8%8F-installation)
 - [🚀 Quick Start](#-quick-start)
@@ -84,7 +85,13 @@ POSIM is designed for researchers studying computational social science, public 
 
 POSIM is under active development. We are building a full simulation system on top of POSIM and will publish it as soon as it is ready. A pip package is also in development, so please follow this repository for release updates.
 
-The current public repository includes the core simulation framework, sanitized run-script examples, lightweight sample data, and local embedding model assets. Full datasets and additional system components will be released gradually after review and anonymization.
+The current public repository includes the core simulation framework, sanitized run-script examples, lightweight sample data, local embedding model assets, and the de-identified crisis datasets in [`datasets/`](datasets/). Additional system components will be released gradually.
+
+---
+
+## 📊 Datasets
+
+[`datasets/`](datasets/) releases the three Sina Weibo crisis datasets used in POSIM: Luxury Earring (LE), WHU Library (WL), and Xibei Prepared Food (XF). Each dataset provides the event timeline, the 5,360 participating accounts, their 220,897 full-chain posts (original posts, reposts, and comments), and 206,202 repost / comment / reply relations, all de-identified. The full crawl (1.57M accounts, 4.52M records) is described in [`datasets/FULL_CRAWL.md`](datasets/FULL_CRAWL.md). See [`datasets/README.md`](datasets/README.md) for schemas, statistics, the de-identification procedure, and terms of use.
 
 ---
 
@@ -428,7 +435,7 @@ Simply add a new endpoint in the `llm_api_configs` configuration — the framewo
 
 > **This study is conducted purely as data-driven scientific research. All events are analyzed based entirely on publicly available data, and the authors hold no opinions or positions regarding any events, individuals, or organizations involved. The simulation framework is intended exclusively for academic research and methodological validation.**
 
-Datasets are collected from publicly available posts on Sina Weibo. We plan to release them publicly after careful review and anonymization.
+Datasets are collected from publicly available posts on Sina Weibo and are released after de-identification for non-commercial academic research only (see [`datasets/README.md`](datasets/README.md)).
 
 ---
 
