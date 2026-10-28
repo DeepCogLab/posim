@@ -27,7 +27,8 @@ datasets/
 │   ├── events.jsonl         # event timeline
 │   ├── users.jsonl.gz       # accounts
 │   ├── posts.jsonl.gz       # original posts, reposts, comments
-│   └── interactions.csv.gz  # repost / comment / reply relations
+│   ├── interactions.csv.gz  # repost / comment / reply relations
+│   └── network.csv.gz       # relationship network used as simulation input
 ├── WL/   (same files)
 └── XF/   (same files)
 ```
@@ -127,6 +128,10 @@ Additional fields by type:
 | `post_id` | the repost or comment that carries the interaction (joins to `posts.jsonl.gz`) |
 
 Self-relations (an account reposting or commenting on its own post) are kept as observed.
+
+### `network.csv.gz`: simulation input network
+
+The directed relationship network among the accounts, which defines the relationship exposure channel of the simulation (`source_user_id` receives posts of `target_user_id`). It is generated from account attributes as described in the paper (Section 5.1), and is provided so that runs can be reproduced.
 
 ## De-identification
 
