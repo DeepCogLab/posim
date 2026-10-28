@@ -21,7 +21,7 @@ For each crisis we collected the original posts that carry crisis-related hashta
 | XF: Xibei Prepared Food (西贝预制菜) | 725,251 | 90,334 | 840,279 | 920,473 | 1,851,086 | 1,760,704 |
 | **Total** | **1,568,367** | **227,148** | **1,797,758** | **2,496,480** | **4,521,386** | **4,293,920** |
 
-- The crawl as collected contains 1,568,368 account documents and 4,521,670 records. The released files are the result of the same de-duplication as the datasets in this directory: one account document and 284 duplicated records (<0.01%) are removed.
+- The crawl as collected contains 1,568,368 account documents and 4,521,670 records. The released files are the result of the same de-duplication as the datasets in this directory: it merges one duplicated account document and removes 284 records (<0.01%).
 - Accounts are counted per crisis. Across the three crises there are 1,388,891 distinct accounts, and 28,021 of them take part in all three.
 
 | Crisis | Unverified | Verified individuals | Institutions | Collection period | Busiest day (posts) |
