@@ -60,7 +60,7 @@ Public opinion events on social media — from consumer disputes to public safet
 
 However, conducting real-world social experiments on these dynamics faces fundamental challenges: ethical constraints prevent deliberate manipulation of public discourse, and each event is unique and irreproducible. This is where **computational simulation** becomes invaluable — it provides a virtual laboratory where researchers can replay, analyze, and experiment with public opinion scenarios in a controlled environment.
 
-Traditional simulation approaches — epidemic models, threshold cascade models, and classic agent-based modeling (ABM) — each capture certain aspects of opinion dynamics, but share a critical limitation: **they cannot explicitly model individual cognitive processes**. Agents in these systems are rule-driven automatons that neither understand the content they encounter nor reason about their responses. Large language models (LLMs) offer a breakthrough with semantic understanding and human-like reasoning, yet most existing LLM-based simulations treat the model as a black-box behavior generator — prompt in, action out — without modeling the intermediate cognitive states that drive real human behavior.
+Traditional simulation approaches — epidemic models, threshold cascade models, and classic agent-based modeling (ABM) — each capture certain aspects of opinion dynamics, but share a critical limitation: **they cannot explicitly model individual cognitive processes**. Agents in these systems are rule-driven automatons that neither understand the content they encounter nor reason about their responses. Large language models (LLMs) offer a breakthrough with semantic understanding and human-like reasoning, yet in existing LLM-based simulations explicit cognitive state is usually limited to a few categorical or scalar variables, or held as profile and memory text consulted through the prompt, and agents are mostly activated in synchronous rounds or on preset schedules.
 
 **POSIM** (**P**ublic **O**pinion **Sim**ulator) bridges this gap. By embedding LLMs within a structured cognitive architecture (Social-BDI), POSIM creates agents that:
 
@@ -75,8 +75,8 @@ POSIM is designed for researchers studying computational social science, public 
 ## ✨ Key Features
 
 - 🧠 **Social-BDI Agent Architecture** — LLMs embedded in a layered cognitive framework (Perception → Belief → Desire → Intention → Action) with emotional arousal and cognitive biases. Three cognitive subsystems powered by independent LLM calls, fully traceable decision chains.
-- ⏱️ **Hawkes Process-Driven Temporal Engine** — Hawkes self-exciting point process unifying exogenous event shocks and endogenous user interactions with circadian rhythm modulation, reproducing realistic "outbreak–sustain–decay" activity patterns at minute-level resolution.
-- 🛡️ **Three-Tier Progressive Validation** — From individual behavioral mechanism calibration → collective phenomenon emergence → statistical consistency, establishing simulation credibility layer by layer.
+- ⏱️ **Hawkes Process-Driven Temporal Engine** — Hawkes self-exciting point process unifying exogenous event shocks and endogenous user interactions with circadian rhythm modulation, reproducing realistic "outbreak–sustain–decay" activity patterns at ten-minute resolution.
+- 🛡️ **Multi-Space Validation** — Individual-level evaluation of agent decisions, emergent stylized facts of online opinion, and agreement with real crises in behavioral, discursive, and topological spaces, complemented by component ablation.
 - 🔌 **Highly Decoupled Modular Architecture** — Agents, environment, and evaluation modules communicate through standard interfaces — swap the cognitive architecture, temporal engine, or evaluation metrics independently.
 
 ---
@@ -108,7 +108,7 @@ POSIM comprises three core components:
 >
 > **(2) Simulation Environment** — Hawkes point process temporal engine for non-stationary activation; virtual social media platform with personalized recommendation, three-layer social networks, and trending topics.
 >
-> **(3) Strategy Evaluation** — Intervenor (event injection, node control, platform policy), Simulator (checkpoint-based counterfactual trajectories), and Evaluator (multi-dimensional quantitative assessment across behavior, content, and topology layers).
+> **(3) Strategy Evaluation** — Intervenor (event injection, node control, cognitive editing, platform policy), Simulator (checkpoint-based counterfactual trajectories), and Evaluator (multi-dimensional quantitative assessment across behavior, content, and topology layers).
 
 ### 🎭 Four Heterogeneous Agent Types
 
@@ -196,7 +196,7 @@ Create `scripts/<event>/config.json`. A minimal example:
         "enabled": true,
         "base_url": "http://localhost:8000/v1/",
         "api_key": "not-needed",
-        "model": "Qwen/Qwen2.5-14B-Instruct",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
         "temperature": 0.7,
         "top_p": 0.9,
         "weight": 1.0

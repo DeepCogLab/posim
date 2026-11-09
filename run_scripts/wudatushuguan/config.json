@@ -16,7 +16,7 @@
       "alpha": 0.08,
       "beta": 0.005
     },
-    "total_scale": 1500,
+    "total_scale": 2000,
     "circadian_strength": 0.3,
     "min_activation_noise": {
       "enabled": true,
@@ -37,7 +37,7 @@
     "comment_count": 5,
     "homophily_weight": 0.3,
     "popularity_weight": 0.3,
-    "recency_weight": 0.2,
+    "recency_weight": 0.4,
     "exploration_rate": 0.2,
     "relation_weight": 0.5,
     "hot_search_update_interval": 15,
@@ -173,7 +173,7 @@
         "enabled": false,
         "base_url": "https://api.example.com/v1/",
         "api_key": "YOUR_API_KEY",
-        "model": "Qwen/Qwen2.5-7B-Instruct/d356ns5sssvc73dhvds0",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
         "temperature": 0.7,
         "top_p": 0.9,
         "weight": 1.0

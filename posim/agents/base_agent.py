@@ -1,3 +1,5 @@
+"""Base agent: belief update, desire generation, and action decision."""
+
 import random
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional

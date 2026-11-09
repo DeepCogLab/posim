@@ -1,3 +1,5 @@
+"""OpenAI-compatible LLM client with small per-call sampling perturbation."""
+
 import asyncio
 import logging
 import random
@@ -79,7 +81,7 @@ class LLMClient(BaseModel):
     enabled: bool = True
     timeout: float = DEFAULT_TIMEOUT
     enable_perturbation: bool = True  # 是否启用超参数扰动
-    perturbation_strength: float = 0.5  # 扰动强度 (0.0-1.0)
+    perturbation_strength: float = 1.0  # 扰动强度 (0.0-1.0)
     aclient: Any = None
 
     class Config:

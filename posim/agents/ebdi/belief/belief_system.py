@@ -1,3 +1,5 @@
+"""Layered belief state: identity, psychological, event opinion, and emotion."""
+
 from dataclasses import dataclass
 from typing import Dict, Any
 from .identity_belief import IdentityBelief

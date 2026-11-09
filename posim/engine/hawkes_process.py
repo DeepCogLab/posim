@@ -1,3 +1,5 @@
+"""Hawkes process that decides how many agents are activated in each step."""
+
 import logging
 import numpy as np
 from typing import List, Tuple, Dict, Any, Set
@@ -227,6 +229,7 @@ class HawkesProcess:
     def get_expected_activations(self, t: float, total_agents: int) -> int:
         """expected = total_scale × λ(t) × (granularity/60)，泊松采样"""
         intensity = self.get_intensity(t)
+        # expected activations in this step, then Poisson sampling
         expected = self.total_scale * intensity * (self.time_granularity / 60.0)
         if expected <= 0 and self.min_activation_noise.get('enabled', True):
             lo = self.min_activation_noise.get('min_rate', 0.0)

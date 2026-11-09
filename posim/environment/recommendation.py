@@ -1,3 +1,5 @@
+"""Feed recommendation: ranks candidate posts by homophily, popularity, and freshness."""
+
 import numpy as np
 import random
 from datetime import datetime

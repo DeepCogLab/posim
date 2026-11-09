@@ -94,8 +94,8 @@
     <div class="section-header reveal">
       <span class="section-label" data-en="Overview" data-cn="概览">Overview</span>
       <h2 class="section-title" data-en="Why POSIM?" data-cn="为什么需要 POSIM？">Why POSIM?</h2>
-      <p class="section-desc" data-en="Existing LLM-driven social simulation frameworks treat models as end-to-end behavior mappers without explicit cognitive states. POSIM addresses this by embedding LLMs into a structured cognitive architecture." data-cn="现有的大语言模型驱动社会仿真框架将模型作为端到端的行为映射器,缺乏显式认知状态建模。POSIM 通过将 LLM 嵌入结构化认知架构来解决这一问题。">
-        Existing LLM-driven social simulation frameworks treat models as end-to-end behavior mappers without explicit cognitive states. POSIM addresses this by embedding LLMs into a structured cognitive architecture.
+      <p class="section-desc" data-en="In existing LLM-driven opinion simulations, explicit cognitive state is usually limited to a few categorical or scalar variables, and agents are mostly activated in synchronous rounds or on preset schedules. POSIM holds cognition in editable belief layers and couples activation to recorded developments and to the agents' own actions." data-cn="现有 LLM 驱动的舆情仿真中，显式认知状态大多只有少数类别或标量变量，智能体也多按同步轮次或预设日程激活。POSIM 将认知保存在可编辑的分层信念中，并使激活同时响应真实事件进展与智能体自身行为。">
+        In existing LLM-driven opinion simulations, explicit cognitive state is usually limited to a few categorical or scalar variables, and agents are mostly activated in synchronous rounds or on preset schedules. POSIM holds cognition in editable belief layers and couples activation to recorded developments and to the agents' own actions.
       </p>
     </div>
 
@@ -103,28 +103,30 @@
       <table class="comparison-table">
         <thead>
           <tr>
-            <th data-en="Platform" data-cn="平台">Platform</th>
-            <th data-en="Explicit Cognitive Modeling" data-cn="显式认知建模">Explicit Cognitive Modeling</th>
-            <th data-en="Validation (M/P/S)" data-cn="验证（机制/现象/统计）">Validation (M/P/S)</th>
-            <th data-en="Real-Case Intervention" data-cn="真实案例干预">Real-Case Intervention</th>
-            <th data-en="LLM Multi-Type Agents" data-cn="LLM多类型智能体">LLM Multi-Type Agents</th>
-            <th data-en="Temporal Precision" data-cn="时间精度">Temporal Precision</th>
-            <th data-en="Modular Design" data-cn="模块化设计">Modular Design</th>
+            <th data-en="Framework" data-cn="框架">Framework</th>
+            <th data-en="Cognitive State" data-cn="认知状态">Cognitive State</th>
+            <th data-en="Temporal Activation" data-cn="时间激活">Temporal Activation</th>
+            <th data-en="Intervention (Info.)" data-cn="干预（信息）">Intervention (Info.)</th>
+            <th data-en="Intervention (Cog.)" data-cn="干预（认知）">Intervention (Cog.)</th>
+            <th data-en="Reliability" data-cn="个体可靠性">Reliability</th>
+            <th data-en="Phenomena" data-cn="现象">Phenomena</th>
+            <th data-en="Real Data" data-cn="真实数据">Real Data</th>
+            <th data-en="Extensibility" data-cn="可扩展性">Extensibility</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>S3</td><td class="cross">✗</td><td>✗/✓/✓</td><td class="cross">✗</td><td class="cross">✗</td><td>★★★</td><td>★★★</td></tr>
-          <tr><td>HiSim</td><td class="cross">✗</td><td>✗/✗/✓</td><td class="cross">✗</td><td class="cross">✗</td><td>★★</td><td>★★</td></tr>
-          <tr><td>GA-S3</td><td class="cross">✗</td><td>✗/✗/✓</td><td class="cross">✗</td><td class="check">✓</td><td>★★★</td><td>★★</td></tr>
-          <tr><td>SPARK</td><td class="cross">✗</td><td>✗/✓/✗</td><td class="cross">✗</td><td class="check">✓</td><td>★★</td><td>★★</td></tr>
-          <tr><td>FDE-LLM</td><td class="cross">✗</td><td>✗/✗/✓</td><td class="cross">✗</td><td class="cross">✗</td><td>★★</td><td>★★</td></tr>
-          <tr><td>TrendSim</td><td class="cross">✗</td><td>✓/✗/✗</td><td class="cross">✗</td><td class="check">✓</td><td>★★★★</td><td>★★★</td></tr>
-          <tr><td>OASIS</td><td class="cross">✗</td><td>✗/✓/✓</td><td class="cross">✗</td><td class="cross">✗</td><td>★★★★</td><td>★★★★</td></tr>
-          <tr><td>LMAgent</td><td class="cross">✗</td><td>✗/✗/✓</td><td class="cross">✗</td><td class="check">✓</td><td>★★</td><td>★★</td></tr>
-          <tr class="highlight-row"><td><strong>POSIM (Ours)</strong></td><td class="check">✓</td><td class="check">✓/✓/✓</td><td class="check">✓</td><td class="check">✓</td><td><strong>★★★★★</strong></td><td><strong>★★★★★</strong></td></tr>
+          <tr><td>S3</td><td>Opinion + emotion</td><td>Rounds</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td>★★</td></tr>
+          <tr><td>HiSim</td><td>Opinion</td><td>Rounds</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td><td>★★</td></tr>
+          <tr><td>FDE-LLM</td><td>Opinion</td><td>Rounds</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td>★</td></tr>
+          <tr><td>TrendSim</td><td>Opinion + emotion</td><td>Preset</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td>★★</td></tr>
+          <tr><td>OASIS</td><td>–</td><td>Preset</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td><td>★★★</td></tr>
+          <tr><td>SPARK</td><td>Opinion</td><td>Rounds</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td class="cross">✗</td><td>★★</td></tr>
+          <tr><td>Lan et al. (2026)</td><td>Opinion</td><td>Preset</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td><td>★</td></tr>
+          <tr><td>CRISP</td><td>Opinion</td><td>Forecast</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td>★★</td></tr>
+          <tr class="highlight-row"><td><strong>POSIM (Ours)</strong></td><td>Disposition + opinion + emotion</td><td>Preset + actions</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td><strong>★★★</strong></td></tr>
         </tbody>
       </table>
-      <p style="text-align:center;font-size:0.8rem;color:var(--text-secondary);margin-top:8px;" data-en="M = Mechanism validation; P = Phenomenon validation; S = Statistical validation." data-cn="M = 机制验证；P = 现象验证；S = 统计验证。"><em>M = Mechanism validation; P = Phenomenon validation; S = Statistical validation.</em></p>
+      <p style="text-align:center;font-size:0.8rem;color:var(--text-secondary);margin-top:8px;" data-en="&lt;em&gt;Entries follow the original papers. Cognitive state: state held beyond profile and memory text (–: none). Preset: time-varying but set in advance. Forecast: next-step activity volume predicted by a model. Info./Cog.: intervention on content or agents / on a component of cognition. Extensibility: ★ fixed pipeline; ★★ configurable modules within one setting; ★★★ agent, environment, and evaluation modules replaceable independently.&lt;/em&gt;" data-cn="&lt;em&gt;各项依据原论文填写。认知状态：画像与记忆文本之外保存的状态（–：无）。Preset：随时间变化但预先设定；Forecast：下一步活跃量由模型预测。干预（信息/认知）：作用于内容或智能体 / 作用于认知成分。可扩展性：★ 固定流程；★★ 单一场景内模块可配置；★★★ 智能体、环境与评估模块可独立替换。&lt;/em&gt;"><em>Entries follow the original papers. Cognitive state: state held beyond profile and memory text (–: none). Preset: time-varying but set in advance. Forecast: next-step activity volume predicted by a model. Info./Cog.: intervention on content or agents / on a component of cognition. Extensibility: ★ fixed pipeline; ★★ configurable modules within one setting; ★★★ agent, environment, and evaluation modules replaceable independently.</em></p>
     </div>
   </div>
 </section>
@@ -151,18 +153,16 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h3 data-en="Hybrid Time-Event Driven Environment" data-cn="时间-事件混合驱动仿真环境">Hybrid Time-Event Driven Environment</h3>
-        <p data-en="Hawkes self-exciting point processes jointly model exogenous event shocks and endogenous user interactions, combined with circadian rhythm modulation, reproducing non-stationary activity patterns at minute-level temporal resolution." data-cn="霍克斯自激点过程统一建模外生事件冲击与内生用户交互，叠加昼夜节律调制，在分钟级时间分辨率下再现非平稳活跃模式。">
-          Hawkes self-exciting point processes jointly model exogenous event shocks and endogenous user interactions, combined with circadian rhythm modulation, reproducing non-stationary activity patterns at minute-level temporal resolution.
+        <p data-en="Hawkes self-exciting point processes jointly model exogenous event shocks and endogenous user interactions, combined with circadian rhythm modulation, reproducing non-stationary activity patterns at ten-minute resolution." data-cn="霍克斯自激点过程统一建模外生事件冲击与内生用户交互，叠加昼夜节律调制，在十分钟分辨率下再现非平稳活跃模式。">
+          Hawkes self-exciting point processes jointly model exogenous event shocks and endogenous user interactions, combined with circadian rhythm modulation, reproducing non-stationary activity patterns at ten-minute resolution.
         </p>
       </div>
       <div class="contrib-card">
         <div class="contrib-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         </div>
-        <h3 data-en="Three-Tier Progressive Validation" data-cn="三层递进验证体系">Three-Tier Progressive Validation</h3>
-        <p data-en="Drawing on classical V&V methodology: micro-level behavioral mechanism calibration → macro-level emergent phenomenon verification → statistical result consistency alignment, building simulation credibility layer by layer." data-cn="借鉴仿真工程 V&V 方法论：微观行为机制校准 → 宏观涌现现象检验 → 统计结果一致性对齐，逐层建立仿真可信度。">
-          Drawing on classical V&amp;V methodology: micro-level behavioral mechanism calibration &rarr; macro-level emergent phenomenon verification &rarr; statistical result consistency alignment, building simulation credibility layer by layer.
-        </p>
+        <h3 data-en="Multi-Space Validation" data-cn="多空间验证">Multi-Space Validation</h3>
+        <p data-en="Individual-level evaluation of agent decisions, stylized facts of online opinion that emerge without being specified, and agreement with real crises in behavioral, discursive, and topological spaces, complemented by component ablation." data-cn="个体层面的决策评估、未经设定而自发涌现的舆情典型事实，以及在行为、话语、拓扑三个空间与真实事件的一致性检验，并辅以组件消融。">Individual-level evaluation of agent decisions, stylized facts of online opinion that emerge without being specified, and agreement with real crises in behavioral, discursive, and topological spaces, complemented by component ablation.</p>
       </div>
       <div class="contrib-card">
         <div class="contrib-icon">
@@ -262,13 +262,13 @@
       <div class="belief-card">
         <span class="emoji">&#x1F464;</span>
         <h4 data-en="B<sup>id</sup> — Role Identity" data-cn="B<sup>id</sup> — 角色身份">B<sup>id</sup> — Role Identity</h4>
-        <p data-en="Gender, location, occupation, followers, verification type" data-cn="性别、地域、职业、粉丝规模、认证类型">Gender, location, occupation, followers, verification type</p>
+        <p data-en="First-person identity description written from the public profile and pre-window posts" data-cn="依据公开资料与窗口期前发帖生成的第一人称身份描述">First-person identity description written from the public profile and pre-window posts</p>
         <span class="stability-tag fixed" data-en="Fixed (Personality Anchor)" data-cn="仿真期间不变">Fixed (Personality Anchor)</span>
       </div>
       <div class="belief-card">
         <span class="emoji">&#x1F9E0;</span>
         <h4 data-en="B<sup>psy</sup> — Psychological" data-cn="B<sup>psy</sup> — 心理认知">B<sup>psy</sup> — Psychological</h4>
-        <p data-en="Conformity, paranoia, catharsis, curiosity-seeking patterns" data-cn="从众、偏执、宣泄、猎奇等心理模式">Conformity, paranoia, catharsis, curiosity-seeking patterns</p>
+        <p data-en="Dispositions such as cathartic venting, curiosity-seeking, and bandwagon conformity" data-cn="情绪宣泄、猎奇、从众等心理倾向">Dispositions such as cathartic venting, curiosity-seeking, and bandwagon conformity</p>
         <span class="stability-tag stable" data-en="Highly Stable" data-cn="高度稳定">Highly Stable</span>
       </div>
       <div class="belief-card">
@@ -341,10 +341,10 @@
       <div class="dataset-card">
         <span class="dataset-tag tag-controversy" data-en="Social Controversy" data-cn="社会争议">Social Controversy</span>
         <h4 data-en="Luxury Earring (LE)" data-cn="天价耳环事件 (LE)">Luxury Earring (LE)</h4>
-        <p data-en="An actress's earrings identified as ¥2.3M luxury goods, sparking intense public debate on celebrity extravagance." data-cn="某演员成人礼照片中佩戴的耳饰被指认为 230 万奢侈品，引发公众对明星炫富的激烈争议。">An actress's earrings identified as &yen;2.3M luxury goods, sparking intense public debate on celebrity extravagance.</p>
+        <p data-en="Jewelry worn by a public figure in a widely circulated photograph was identified as a luxury item, producing a short, concentrated outbreak." data-cn="公众人物在一张广泛流传的照片中佩戴的首饰被指认为奢侈品，讨论在短时间内集中爆发。">Jewelry worn by a public figure in a widely circulated photograph was identified as a luxury item, producing a short, concentrated outbreak.</p>
         <div class="dataset-stats">
           <div class="dataset-stat"><strong>1,530</strong><span data-en="Users" data-cn="用户">Users</span></div>
-          <div class="dataset-stat"><strong>34,218</strong><span data-en="Posts" data-cn="帖子">Posts</span></div>
+          <div class="dataset-stat"><strong>105,973</strong><span data-en="Posts" data-cn="帖子">Posts</span></div>
           <div class="dataset-stat"><strong>~46h</strong><span data-en="Duration" data-cn="时间跨度">Duration</span></div>
           <div class="dataset-stat"><strong>276</strong><span data-en="Sim. Steps" data-cn="仿真步数">Sim. Steps</span></div>
         </div>
@@ -352,10 +352,10 @@
       <div class="dataset-card">
         <span class="dataset-tag tag-campus" data-en="Campus Incident" data-cn="校园事件">Campus Incident</span>
         <h4 data-en="WHU Library (WL)" data-cn="武大图书馆事件 (WL)">WHU Library (WL)</h4>
-        <p data-en="Harassment allegation dispute at Wuhan University; court ruling reignited large-scale debate on justice and campus safety." data-cn="武汉大学图书馆性骚扰指控纠纷，法院判决再次引爆关于司法公正和校园安全的大规模讨论。">Harassment allegation dispute at Wuhan University; court ruling reignited large-scale debate on justice and campus safety.</p>
+        <p data-en="A reported harassment incident at Wuhan University in July 2023, reignited by a first-instance verdict in July 2025: a long cycle from dormancy through revival." data-cn="源于 2023 年 7 月武汉大学的一起骚扰事件报道，2025 年 7 月一审判决后再次引发讨论，经历从沉寂到复燃的长周期。">A reported harassment incident at Wuhan University in July 2023, reignited by a first-instance verdict in July 2025: a long cycle from dormancy through revival.</p>
         <div class="dataset-stats">
           <div class="dataset-stat"><strong>1,843</strong><span data-en="Users" data-cn="用户">Users</span></div>
-          <div class="dataset-stat"><strong>51,647</strong><span data-en="Posts" data-cn="帖子">Posts</span></div>
+          <div class="dataset-stat"><strong>85,050</strong><span data-en="Posts" data-cn="帖子">Posts</span></div>
           <div class="dataset-stat"><strong>~190h</strong><span data-en="Duration" data-cn="时间跨度">Duration</span></div>
           <div class="dataset-stat"><strong>1,140</strong><span data-en="Sim. Steps" data-cn="仿真步数">Sim. Steps</span></div>
         </div>
@@ -363,10 +363,10 @@
       <div class="dataset-card">
         <span class="dataset-tag tag-food" data-en="Food Safety" data-cn="食品安全">Food Safety</span>
         <h4 data-en="Xibei Prepared Food (XF)" data-cn="西贝预制菜事件 (XF)">Xibei Prepared Food (XF)</h4>
-        <p data-en="Internet celebrity publicly accused a restaurant chain of extensive prepared food use, sparking food safety concerns." data-cn="网红企业家公开指控餐饮品牌大量使用预制菜，引发食品安全和消费者知情权广泛关注。">Internet celebrity publicly accused a restaurant chain of extensive prepared food use, sparking food safety concerns.</p>
+        <p data-en="An allegation that a restaurant chain served prepared dishes developed into prolonged multi-party contention." data-cn="有关某连锁餐饮使用预制菜的指控，演变为多方长时间的持续争论。">An allegation that a restaurant chain served prepared dishes developed into prolonged multi-party contention.</p>
         <div class="dataset-stats">
           <div class="dataset-stat"><strong>1,987</strong><span data-en="Users" data-cn="用户">Users</span></div>
-          <div class="dataset-stat"><strong>14,892</strong><span data-en="Posts" data-cn="帖子">Posts</span></div>
+          <div class="dataset-stat"><strong>29,874</strong><span data-en="Posts" data-cn="帖子">Posts</span></div>
           <div class="dataset-stat"><strong>~71h</strong><span data-en="Duration" data-cn="时间跨度">Duration</span></div>
           <div class="dataset-stat"><strong>426</strong><span data-en="Sim. Steps" data-cn="仿真步数">Sim. Steps</span></div>
         </div>
@@ -385,86 +385,90 @@
 
     <!-- Summary metric highlights -->
     <div class="highlight-box reveal" style="border-left-color:var(--accent);">
-      <h3 data-en="Overall Performance Improvement" data-cn="综合性能提升">Overall Performance Improvement</h3>
-      <p data-en="POSIM's behavioral, content, and topological metrics outperform the best baseline across three real-world Weibo datasets:" data-cn="POSIM 在三个真实微博数据集上的行为、内容和拓扑指标均超越最优基线：">POSIM's behavioral, content, and topological metrics outperform the best baseline across three real-world Weibo datasets:</p>
+      <h3 data-en="Agreement with Three Real Crises" data-cn="与三个真实事件的一致性">Agreement with Three Real Crises</h3>
+      <p data-en="One configuration, fixed on LE and not re-tuned for WL and XF, agrees with all three crises in behavioral, discursive, and topological spaces:" data-cn="同一套参数在 LE 上确定、不再针对 WL 和 XF 调整，在行为、话语、拓扑三个空间与三个事件均保持一致：">One configuration, fixed on LE and not re-tuned for WL and XF, agrees with all three crises in behavioral, discursive, and topological spaces:</p>
       <div class="metric-highlights">
         <div class="metric-highlight-card">
-          <div class="value">+5.0%</div>
-          <div class="label" data-en="Behavior Layer" data-cn="行为层">Behavior Layer</div>
+          <div class="value" data-animated="true">23 / 27</div>
+          <div class="label" data-en="Crisis-by-metric comparisons ranked first" data-cn="在 27 项“事件×指标”比较中排名第一">Crisis-by-metric comparisons ranked first</div>
         </div>
         <div class="metric-highlight-card">
-          <div class="value">+13.0%</div>
-          <div class="label" data-en="Content Layer" data-cn="内容层">Content Layer</div>
+          <div class="value" data-animated="true">0.79–0.84</div>
+          <div class="label" data-en="Irrationality similarity, best on all three crises" data-cn="非理性表达相似度，三个事件均为最优">Irrationality similarity, best on all three crises</div>
         </div>
         <div class="metric-highlight-card">
-          <div class="value">+8.5%</div>
-          <div class="label" data-en="Topology Layer" data-cn="拓扑层">Topology Layer</div>
+          <div class="value" data-animated="true">6</div>
+          <div class="label" data-en="Stylized facts that emerge without being specified" data-cn="未经设定而自发涌现的舆情典型事实">Stylized facts that emerge without being specified</div>
         </div>
       </div>
     </div>
-
     <!-- Validation Framework -->
-    <h3 style="text-align:center;margin:40px 0 20px;font-size:1.1rem;" data-en="Three-Tier Validation Framework" data-cn="三层递进验证体系" class="reveal">Three-Tier Validation Framework</h3>
+    <h3 style="text-align:center;margin:40px 0 20px;font-size:1.1rem;" data-en="Validation Overview" data-cn="验证概览" class="reveal">Validation Overview</h3>
     <div class="validation-tiers reveal">
       <div class="tier-card">
         <span class="tier-num">1</span>
-        <h4 data-en="Micro-Level Mechanism Calibration" data-cn="微观行为机制校准">Micro-Level Mechanism Calibration</h4>
-        <p data-en="Cognitive-behavior chain consistency (0–5), personality stability (0–1), decision robustness (0–1)" data-cn="认知行为链一致性 (0–5)，人格稳定性 (0–1)，决策抗扰性 (0–1)">Cognitive-behavior chain consistency (0–5), personality stability (0–1), decision robustness (0–1)</p>
+        <h4 data-en="Individual-Level Evaluation" data-cn="个体层面评估">Individual-Level Evaluation</h4>
+        <p data-en="Behavioral coherence (0–5), personality stability, decision robustness, and personality identifiability" data-cn="行为连贯性 (0–5)、人格稳定性、决策鲁棒性、人格可识别性">Behavioral coherence (0–5), personality stability, decision robustness, and personality identifiability</p>
       </div>
       <div class="tier-card">
         <span class="tier-num">2</span>
-        <h4 data-en="Macro-Level Emergence Verification" data-cn="宏观涌现现象校准">Macro-Level Emergence Verification</h4>
+        <h4 data-en="Emergent Stylized Facts" data-cn="典型事实涌现">Emergent Stylized Facts</h4>
         <p data-en="Opinion lifecycle, multi-agent heterogeneity, emotional polarization, scale-free topology & cascade power-law" data-cn="舆情生命周期，多主体行为异质性，情绪极化效应，无标度拓扑与级联幂律">Opinion lifecycle, multi-agent heterogeneity, emotional polarization, scale-free topology &amp; cascade power-law</p>
       </div>
       <div class="tier-card">
         <span class="tier-num">3</span>
-        <h4 data-en="Statistical Consistency Alignment" data-cn="统计结果一致性校准">Statistical Consistency Alignment</h4>
-        <p data-en="9 quantitative metrics across behavior (3), content (3), and topology (3) layers" data-cn="行为层（3个指标）、内容层（3个指标）、拓扑层（3个指标），共9个定量指标">9 quantitative metrics across behavior (3), content (3), and topology (3) layers</p>
+        <h4 data-en="Three Observation Spaces" data-cn="三个观测空间">Three Observation Spaces</h4>
+        <p data-en="9 metrics across the behavioral (3), discursive (3), and topological (3) spaces" data-cn="行为（3）、话语（3）、拓扑（3）三个空间共 9 项指标">9 metrics across the behavioral (3), discursive (3), and topological (3) spaces</p>
       </div>
     </div>
 
-    <!-- ===== Tier 1: Micro Validation ===== -->
+    <!-- ===== Individual level ===== -->
     <div style="margin-top:48px;" class="reveal">
-      <h3 class="result-section-title" data-en="Tier 1 · Micro-Level Behavioral Mechanism Validation" data-cn="第一层 · 微观行为机制验证">Tier 1 &middot; Micro-Level Behavioral Mechanism Validation</h3>
+      <h3 class="result-section-title" data-en="Individual Level · Does the Architecture Change the Decision?" data-cn="个体层面 · 认知架构是否改变决策？">Individual Level &middot; Does the Architecture Change the Decision?</h3>
       <div>
-        <p style="text-align:center;margin-bottom:16px;font-size:0.9rem;color:var(--text-secondary);" data-en="500 randomly sampled users, 12 simulation rounds, four methods under identical conditions." data-cn="随机抽取 500 名用户，12 轮仿真，四种方法在完全相同条件下对比。">500 randomly sampled users, 12 simulation rounds, four methods under identical conditions.</p>
+        <p style="text-align:center;margin-bottom:16px;font-size:0.9rem;color:var(--text-secondary);" data-en="200 users sampled from LE, 8 rounds, all designs on Qwen2.5-7B-Instruct. Behavioral coherence and personality stability are scored by three judge models from other families; decision robustness and personality identifiability use no judge." data-cn="从 LE 抽取 200 名用户，8 轮，所有方法均使用 Qwen2.5-7B-Instruct。行为连贯性与人格稳定性由三个其他系列的评审模型打分；决策鲁棒性与人格可识别性不使用评审模型。">200 users sampled from LE, 8 rounds, all designs on Qwen2.5-7B-Instruct. Behavioral coherence and personality stability are scored by three judge models from other families; decision robustness and personality identifiability use no judge.</p>
         <div class="result-table-wrap">
           <table class="result-table">
             <thead>
               <tr>
-                <th data-en="Method" data-cn="方法">Method</th>
-                <th>Cognitive-Behavior Chain (0–5) &uarr;</th>
-                <th>Personality Stability (0–1) &uarr;</th>
-                <th>Decision Robustness (0–1) &uarr;</th>
+                <th data-en="Agent Design" data-cn="智能体设计">Agent Design</th>
+                <th>Behavioral Coherence (0–5) &uarr;</th>
+                <th>Personality Stability &uarr;</th>
+                <th>Decision Robustness &uarr;</th>
+                <th>Personality Identifiability &uarr;</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Direct-Nothink</td><td>1.47 &pm; 0.50</td><td>0.478 &pm; 0.263</td><td>0.629 &pm; 0.240</td></tr>
-              <tr><td>Direct-Think</td><td>1.75 &pm; 0.43</td><td>0.448 &pm; 0.269</td><td>0.603 &pm; 0.299</td></tr>
-              <tr><td>CoT</td><td>3.09 &pm; 0.29</td><td>0.516 &pm; 0.272</td><td>0.541 &pm; 0.356</td></tr>
-              <tr class="ours-row"><td><strong>Social-BDI (Ours)</strong></td><td class="best">4.64 &pm; 0.48</td><td class="best">0.661 &pm; 0.215</td><td class="best">0.695 &pm; 0.213</td></tr>
+              <tr><td>Direct-Prompt</td><td>2.87 &pm; 0.76</td><td>0.491 &pm; 0.191</td><td>0.884 &pm; 0.095</td><td>0.610 &pm; 0.312</td></tr>
+              <tr><td>CoT-Prompt</td><td>2.37 &pm; 0.93</td><td>0.477 &pm; 0.192</td><td>0.923 &pm; 0.084</td><td>0.601 &pm; 0.309</td></tr>
+              <tr><td>Staged-3</td><td>2.82 &pm; 0.87</td><td>0.518 &pm; 0.193</td><td>0.881 &pm; 0.105</td><td>0.627 &pm; 0.297</td></tr>
+              <tr><td>TextMem</td><td>1.56 &pm; 0.74</td><td>0.461 &pm; 0.183</td><td>0.963 &pm; 0.069</td><td>0.632 &pm; 0.311</td></tr>
+              <tr><td>S3</td><td>2.69 &pm; 0.95</td><td>0.497 &pm; 0.196</td><td>0.916 &pm; 0.095</td><td>0.678 &pm; 0.308</td></tr>
+              <tr><td>OASIS</td><td>3.35 &pm; 0.60</td><td>0.503 &pm; 0.199</td><td>0.929 &pm; 0.076</td><td>0.571 &pm; 0.305</td></tr>
+              <tr><td>HiSim</td><td>2.26 &pm; 0.83</td><td>0.481 &pm; 0.201</td><td>0.899 &pm; 0.091</td><td>0.619 &pm; 0.315</td></tr>
+              <tr><td>SPARK</td><td>3.38 &pm; 0.62</td><td>0.494 &pm; 0.209</td><td>0.941 &pm; 0.045</td><td>0.598 &pm; 0.310</td></tr>
+              <tr class="ours-row"><td><strong>Social-BDI (Ours)</strong></td><td class="best">3.60 &pm; 0.68</td><td class="best">0.552 &pm; 0.204</td><td class="best">0.971 &pm; 0.046</td><td class="best">0.712 &pm; 0.284</td></tr>
             </tbody>
           </table>
         </div>
         <div class="highlight-box" style="margin-top:24px;border-left-color:#8b5cf6;">
-          <p data-en="&lt;strong&gt;Key Finding:&lt;/strong&gt; CoT's decision robustness is actually the &lt;em&gt;lowest&lt;/em&gt; (0.541) — without stable state anchoring, input perturbations ripple through the entire reasoning chain. Social-BDI's explicit belief states provide a cognitive anchoring effect, maintaining decision stability." data-cn="&lt;strong&gt;关键发现：&lt;/strong&gt;CoT 的决策抗扰性反而&lt;em&gt;最低&lt;/em&gt;（0.541）——单次调用中缺乏稳定的状态锚定，输入扰动会波及整个推理链条。Social-BDI 通过显式信念状态提供认知锚定效应，保持决策稳定性。">
-            <strong>Key Finding:</strong> CoT's decision robustness is actually the <em>lowest</em> (0.541) — without stable state anchoring, input perturbations ripple through the entire reasoning chain. Social-BDI's explicit belief states provide a cognitive anchoring effect, maintaining decision stability.
+          <p data-en="&lt;strong&gt;Two controls:&lt;/strong&gt; Staged-3 makes the same number of calls as Social-BDI yet scores lower on behavioral coherence and decision robustness, so call count does not explain the difference. TextMem keeps a free-text state across rounds and reaches a high decision robustness (0.963) but low coherence, consistent with persistent state supporting stability and structured decomposition supporting coherence." data-cn="&lt;strong&gt;两个对照：&lt;/strong&gt;Staged-3 与 Social-BDI 调用次数相同，但行为连贯性和决策鲁棒性更低，说明差异并非来自调用次数。TextMem 跨轮保留自由文本状态，决策鲁棒性较高（0.963）但连贯性较低，表明持久状态有助于稳定性，结构化分解有助于连贯性。">
+            <strong>Two controls:</strong> Staged-3 makes the same number of calls as Social-BDI yet scores lower on behavioral coherence and decision robustness, so call count does not explain the difference. TextMem keeps a free-text state across rounds and reaches a high decision robustness (0.963) but low coherence, consistent with persistent state supporting stability and structured decomposition supporting coherence.
           </p>
         </div>
       </div>
     </div>
-
-    <!-- ===== Tier 2: Macro Emergence ===== -->
+    <!-- ===== Emergence ===== -->
     <div style="margin-top:56px;" class="reveal">
-      <h3 class="result-section-title" data-en="Tier 2 · Macro-Level Emergent Phenomena" data-cn="第二层 · 宏观涌现现象">Tier 2 &middot; Macro-Level Emergent Phenomena</h3>
+      <h3 class="result-section-title" data-en="Emergence · Stylized Facts of Online Opinion" data-cn="涌现 · 舆情典型事实">Emergence &middot; Stylized Facts of Online Opinion</h3>
       <div>
-        <p style="text-align:center;margin-bottom:20px;font-size:0.9rem;color:var(--text-secondary);" data-en="All macro phenomena emerged spontaneously from agent interactions — none were pre-programmed." data-cn="以下所有宏观现象均非预设规则驱动，而是由智能体交互自发涌现。">All macro phenomena emerged spontaneously from agent interactions — none were pre-programmed.</p>
+        <p style="text-align:center;margin-bottom:20px;font-size:0.9rem;color:var(--text-secondary);" data-en="These regularities emerge in the XF run without being specified in the configuration." data-cn="以下规律在 XF 仿真中自发出现，配置中并未设定。">These regularities emerge in the XF run without being specified in the configuration.</p>
         <div class="figure-gallery">
           <figure class="figure-card" onclick="openLightbox(this.querySelector('img'))">
             <img src="fig_lifecycle_paper.png" alt="Opinion Lifecycle">
             <figcaption>
               <strong data-en="Figure 2. Opinion Lifecycle" data-cn="图 2. 舆情生命周期">Figure 2. Opinion Lifecycle</strong>
-              <span data-en="Multi-stage lifecycle from outbreak → plateau → resurgence → decline. E₁–E₇ mark exogenous event injection points. Cumulative S-curve closely matches diffusion theory." data-cn="从爆发、平台、复燃到衰退的多阶段生命周期。E₁–E₇ 标记外生事件注入点。累积 S 曲线与扩散理论高度吻合。">Multi-stage lifecycle from outbreak &rarr; plateau &rarr; resurgence &rarr; decline. E&#x2081;–E&#x2087; mark exogenous event injection points. Cumulative S-curve closely matches diffusion theory.</span>
+              <span data-en="Multi-stage lifecycle from outbreak → plateau → resurgence → decline. E₁–E₇ mark exogenous event injection points. The cumulative curve is S-shaped." data-cn="从爆发、平台、复燃到衰退的多阶段生命周期。E₁–E₇ 标记外生事件注入点。累积曲线呈 S 形。">Multi-stage lifecycle from outbreak &rarr; plateau &rarr; resurgence &rarr; decline. E&#x2081;–E&#x2087; mark exogenous event injection points. The cumulative curve is S-shaped.</span>
             </figcaption>
           </figure>
           <figure class="figure-card" onclick="openLightbox(this.querySelector('img'))">
@@ -485,62 +489,62 @@
             <img src="fig_paper_powerlaw.png" alt="Power-law Distribution">
             <figcaption>
               <strong data-en="Figure 5. Scale-Free Topology & Cascade Power-Law" data-cn="图 5. 无标度拓扑与级联幂律">Figure 5. Scale-Free Topology &amp; Cascade Power-Law</strong>
-              <span data-en="Degree distribution: γ = 1.87 (R² = 0.880); cascade CCDF: α = 3.70 — reproducing the 'most go unnoticed, few go viral' long-tail phenomenon." data-cn="度分布幂律指数 γ = 1.87 (R² = 0.880)；级联 CCDF α = 3.70——再现"多数无人问津、少数病毒传播"的长尾现象。">Degree distribution: &gamma; = 1.87 (R&sup2; = 0.880); cascade CCDF: &alpha; = 3.70 — reproducing the "most go unnoticed, few go viral" long-tail phenomenon.</span>
+              <span data-en="Degree distribution: γ = 1.87; cascade CCDF: α = 3.70 — reproducing the 'most go unnoticed, few go viral' long-tail phenomenon." data-cn="度分布幂律指数 γ = 1.87；级联 CCDF α = 3.70——再现"多数无人问津、少数病毒传播"的长尾现象。">Degree distribution: &gamma; = 1.87; cascade CCDF: &alpha; = 3.70 — reproducing the "most go unnoticed, few go viral" long-tail phenomenon.</span>
             </figcaption>
           </figure>
         </div>
       </div>
     </div>
 
-    <!-- ===== Tier 3: Statistical Calibration ===== -->
+    <!-- ===== Collective level ===== -->
     <div style="margin-top:56px;" class="reveal">
-      <h3 class="result-section-title" data-en="Tier 3 · Statistical Consistency Calibration" data-cn="第三层 · 统计结果一致性校准">Tier 3 &middot; Statistical Consistency Calibration</h3>
+      <h3 class="result-section-title" data-en="Collective Level · Agreement Along Three Observation Spaces" data-cn="群体层面 · 三个观测空间的一致性">Collective Level &middot; Agreement Along Three Observation Spaces</h3>
       <div>
         <figure class="figure-card full-width" style="margin-bottom:24px;" onclick="openLightbox(this.querySelector('img'))">
           <img src="fig_three_event_calibration.png" alt="Calibration Results">
           <figcaption>
-            <strong data-en="Figure 6. Behavior & Activity Calibration" data-cn="图 6. 行为热度与分布校准">Figure 6. Behavior &amp; Activity Calibration</strong>
+            <strong data-en="Figure 6. Activity and Action Mix" data-cn="图 6. 活跃度与行为构成">Figure 6. Activity and Action Mix</strong>
             <span data-en="Each row corresponds to one event. Left: activity time series comparison; Right: behavioral type distribution comparison." data-cn="每行对应一个事件，左侧为活跃度时序对比，右侧为行为类型比例对比。">Each row corresponds to one event. Left: activity time series comparison; Right: behavioral type distribution comparison.</span>
           </figcaption>
         </figure>
 
         <!-- Full calibration table -->
-        <h4 style="text-align:center;margin-bottom:12px;" data-en="Statistical Calibration Results" data-cn="统计校准结果">Statistical Calibration Results</h4>
+        <h4 style="text-align:center;margin-bottom:12px;" data-en="Nine Metrics on Three Crises" data-cn="三个事件上的九项指标">Nine Metrics on Three Crises</h4>
         <div class="result-table-wrap">
           <table class="result-table" style="font-size:0.8rem;">
             <thead>
               <tr>
                 <th data-en="Dataset" data-cn="数据集">Data</th>
                 <th data-en="Method" data-cn="方法">Method</th>
-                <th>JSD &darr;</th>
+                <th>BType JSD &darr;</th>
                 <th>Act.&rho; &uarr;</th>
-                <th>RMSE &darr;</th>
+                <th>Act. RMSE &darr;</th>
                 <th data-en="Beh.Avg" data-cn="行为均">Beh.Avg &uarr;</th>
-                <th>Confr. &uarr;</th>
+                <th>Irrat. Sim. &uarr;</th>
                 <th>|&Delta;TTR| &darr;</th>
                 <th>|&Delta;S̄| &darr;</th>
-                <th data-en="Cont.Avg" data-cn="内容均">Cont.Avg &uarr;</th>
-                <th>Net. &uarr;</th>
-                <th>Casc. &uarr;</th>
-                <th>PL &uarr;</th>
+                <th data-en="Disc.Avg" data-cn="话语均">Disc.Avg &uarr;</th>
+                <th>Net. Sim. &uarr;</th>
+                <th>Casc. Sim. &uarr;</th>
+                <th>Casc. PL &uarr;</th>
                 <th data-en="Topo.Avg" data-cn="拓扑均">Topo.Avg &uarr;</th>
               </tr>
             </thead>
             <tbody>
               <!-- LE -->
-              <tr><td rowspan="4"><strong>LE</strong></td><td>Rule ABM</td><td>0.427</td><td>0.808</td><td>0.158</td><td>0.741</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.479</td><td>0.633</td><td>0.543</td><td>0.552</td></tr>
-              <tr><td>w/ LLM</td><td>0.289</td><td>0.799</td><td>0.162</td><td>0.783</td><td>0.544</td><td>0.185</td><td>0.319</td><td>0.680</td><td>0.565</td><td>0.735</td><td>0.918</td><td>0.739</td></tr>
-              <tr><td>w/ CoT</td><td>0.394</td><td>0.806</td><td class="best">0.151</td><td>0.754</td><td>0.584</td><td>0.141</td><td>0.123</td><td>0.774</td><td>0.755</td><td>0.777</td><td>0.756</td><td>0.763</td></tr>
+              <tr><td rowspan="4"><strong>LE</strong></td><td>Rule-based ABM</td><td>0.427</td><td>0.808</td><td>0.158</td><td>0.741</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.479</td><td>0.633</td><td>0.543</td><td>0.552</td></tr>
+              <tr><td>Direct-Prompt</td><td>0.289</td><td>0.799</td><td>0.162</td><td>0.783</td><td>0.544</td><td>0.185</td><td>0.319</td><td>0.680</td><td>0.565</td><td>0.735</td><td>0.918</td><td>0.739</td></tr>
+              <tr><td>CoT-Prompt</td><td>0.394</td><td>0.806</td><td class="best">0.151</td><td>0.754</td><td>0.584</td><td>0.141</td><td>0.123</td><td>0.774</td><td>0.755</td><td>0.777</td><td>0.756</td><td>0.763</td></tr>
               <tr class="ours-row"><td><strong>POSIM</strong></td><td class="best">0.193</td><td class="best">0.809</td><td>0.154</td><td class="best">0.821</td><td class="best">0.790</td><td class="best">0.030</td><td class="best">0.029</td><td class="best">0.910</td><td class="best">0.895</td><td class="best">0.830</td><td class="best">0.961</td><td class="best">0.896</td></tr>
               <!-- WL -->
-              <tr><td rowspan="4"><strong>WL</strong></td><td>Rule ABM</td><td>0.318</td><td>0.681</td><td>0.126</td><td>0.746</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.869</td><td>0.696</td><td>0.642</td><td>0.736</td></tr>
-              <tr><td>w/ LLM</td><td>0.237</td><td>0.722</td><td>0.119</td><td>0.789</td><td>0.453</td><td>0.172</td><td>0.360</td><td>0.640</td><td>0.528</td><td>0.667</td><td>0.580</td><td>0.592</td></tr>
-              <tr><td>w/ CoT</td><td>0.229</td><td>0.744</td><td class="best">0.116</td><td>0.800</td><td>0.474</td><td>0.091</td><td>0.365</td><td>0.673</td><td class="best">0.941</td><td>0.740</td><td>0.673</td><td>0.784</td></tr>
+              <tr><td rowspan="4"><strong>WL</strong></td><td>Rule-based ABM</td><td>0.318</td><td>0.681</td><td>0.126</td><td>0.746</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.869</td><td>0.696</td><td>0.642</td><td>0.736</td></tr>
+              <tr><td>Direct-Prompt</td><td>0.237</td><td>0.722</td><td>0.119</td><td>0.789</td><td>0.453</td><td>0.172</td><td>0.360</td><td>0.640</td><td>0.528</td><td>0.667</td><td>0.580</td><td>0.592</td></tr>
+              <tr><td>CoT-Prompt</td><td>0.229</td><td>0.744</td><td class="best">0.116</td><td>0.800</td><td>0.474</td><td>0.091</td><td>0.365</td><td>0.673</td><td class="best">0.941</td><td>0.740</td><td>0.673</td><td>0.784</td></tr>
               <tr class="ours-row"><td><strong>POSIM</strong></td><td class="best">0.073</td><td class="best">0.750</td><td>0.118</td><td class="best">0.853</td><td class="best">0.841</td><td class="best">0.010</td><td class="best">0.203</td><td class="best">0.876</td><td>0.850</td><td class="best">0.758</td><td class="best">0.965</td><td class="best">0.858</td></tr>
               <!-- XF -->
-              <tr><td rowspan="4"><strong>XF</strong></td><td>Rule ABM</td><td>0.312</td><td>0.664</td><td>0.187</td><td>0.721</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.528</td><td>0.614</td><td>0.279</td><td>0.474</td></tr>
-              <tr><td>w/ LLM</td><td>0.244</td><td>0.671</td><td>0.190</td><td>0.746</td><td>0.765</td><td>0.117</td><td>0.076</td><td>0.858</td><td>0.774</td><td>0.695</td><td>0.482</td><td>0.650</td></tr>
-              <tr><td>w/ CoT</td><td>0.293</td><td>0.699</td><td>0.181</td><td>0.742</td><td>0.774</td><td>0.134</td><td class="best">0.014</td><td>0.875</td><td>0.767</td><td class="best">0.696</td><td>0.460</td><td>0.641</td></tr>
+              <tr><td rowspan="4"><strong>XF</strong></td><td>Rule-based ABM</td><td>0.312</td><td>0.664</td><td>0.187</td><td>0.721</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.528</td><td>0.614</td><td>0.279</td><td>0.474</td></tr>
+              <tr><td>Direct-Prompt</td><td>0.244</td><td>0.671</td><td>0.190</td><td>0.746</td><td>0.765</td><td>0.117</td><td>0.076</td><td>0.858</td><td>0.774</td><td>0.695</td><td>0.482</td><td>0.650</td></tr>
+              <tr><td>CoT-Prompt</td><td>0.293</td><td>0.699</td><td>0.181</td><td>0.742</td><td>0.774</td><td>0.134</td><td class="best">0.014</td><td>0.875</td><td>0.767</td><td class="best">0.696</td><td>0.460</td><td>0.641</td></tr>
               <tr class="ours-row"><td><strong>POSIM</strong></td><td class="best">0.148</td><td class="best">0.727</td><td class="best">0.168</td><td class="best">0.804</td><td class="best">0.843</td><td class="best">0.019</td><td>0.046</td><td class="best">0.926</td><td class="best">0.885</td><td class="best">0.696</td><td class="best">0.513</td><td class="best">0.698</td></tr>
             </tbody>
           </table>
@@ -552,20 +556,20 @@
     <div style="margin-top:56px;" class="reveal">
       <h3 class="result-section-title" data-en="Ablation Study" data-cn="消融实验">Ablation Study</h3>
       <div>
-        <p style="text-align:center;margin-bottom:16px;font-size:0.9rem;color:var(--text-secondary);" data-en="Ablation study on the LE dataset to verify the necessity of each module." data-cn="在天价耳环数据集上验证各模块的必要性。">Ablation study on the LE dataset to verify the necessity of each module.</p>
+        <p style="text-align:center;margin-bottom:16px;font-size:0.9rem;color:var(--text-secondary);" data-en="Component ablation on LE: one component removed at a time, everything else unchanged." data-cn="在 LE 上逐一移除单个组件，其余设置不变。">Component ablation on LE: one component removed at a time, everything else unchanged.</p>
         <div class="result-table-wrap">
           <table class="result-table">
             <thead>
               <tr>
                 <th data-en="Configuration" data-cn="配置">Configuration</th>
-                <th>JSD &darr;</th>
+                <th>BType JSD &darr;</th>
                 <th>&rho; &uarr;</th>
-                <th>RMSE &darr;</th>
-                <th>Confr. &uarr;</th>
+                <th>Act. RMSE &darr;</th>
+                <th>Irrat. Sim. &uarr;</th>
                 <th>|&Delta;TTR| &darr;</th>
                 <th>|&Delta;S̄| &darr;</th>
-                <th>Net. &uarr;</th>
-                <th>Casc. &uarr;</th>
+                <th>Net. Sim. &uarr;</th>
+                <th>Casc. Sim. &uarr;</th>
               </tr>
             </thead>
             <tbody>
@@ -573,18 +577,18 @@
               <tr><td>w/o Belief</td><td>0.258</td><td>0.762</td><td>0.172</td><td>0.706</td><td>0.058</td><td>0.067</td><td>0.861</td><td>0.773</td></tr>
               <tr><td>w/o Desire</td><td>0.267</td><td>0.779</td><td>0.169</td><td>0.682</td><td>0.071</td><td>0.083</td><td>0.853</td><td>0.788</td></tr>
               <tr><td>w/o Intention</td><td>0.237</td><td>0.802</td><td>0.159</td><td>0.728</td><td>0.064</td><td>0.055</td><td>0.858</td><td>0.814</td></tr>
-              <tr><td>w/o Hawkes</td><td class="best">0.177</td><td>0.235</td><td>0.362</td><td>0.787</td><td>0.207</td><td class="best">0.028</td><td>0.822</td><td>0.754</td></tr>
+              <tr><td>w/o coupling</td><td class="best">0.177</td><td>0.235</td><td>0.362</td><td>0.787</td><td>0.207</td><td class="best">0.028</td><td>0.822</td><td>0.754</td></tr>
             </tbody>
           </table>
         </div>
         <div class="highlight-box" style="margin-top:24px;border-left-color:#f59e0b;">
           <h3 data-en="Ablation Insights" data-cn="消融发现">Ablation Insights</h3>
-          <p data-en="Each component has a clear functional division:" data-cn="各组件具有清晰的功能分工：">Each component has a clear functional division:</p>
+          <p data-en="The two mechanisms mainly affect different observables:" data-cn="两类机制主要影响不同的观测量：">The two mechanisms mainly affect different observables:</p>
           <ul style="margin-top:8px;padding-left:20px;font-size:0.88rem;color:var(--text-secondary);line-height:1.8;">
-            <li data-en="&lt;strong&gt;w/o Hawkes:&lt;/strong&gt; Act.ρ plummets from 0.809 → 0.235; uniform activation destroys temporal dynamics" data-cn="&lt;strong&gt;移除霍克斯引擎：&lt;/strong&gt;Act.ρ 从 0.809 骤降至 0.235，均匀激活丧失时序波动"><strong>w/o Hawkes:</strong> Act.&rho; plummets from 0.809 &rarr; 0.235; uniform activation destroys temporal dynamics</li>
-            <li data-en="&lt;strong&gt;w/o Belief:&lt;/strong&gt; Confrontation similarity drops 0.790 → 0.706; agents lose deep understanding of contentious points" data-cn="&lt;strong&gt;移除信念模块：&lt;/strong&gt;对抗性相似度从 0.790 降至 0.706，丧失对争议焦点的深层理解"><strong>w/o Belief:</strong> Confrontation similarity drops 0.790 &rarr; 0.706; agents lose deep understanding</li>
-            <li data-en="&lt;strong&gt;w/o Desire:&lt;/strong&gt; Content layer degrades most severely (Confr. → 0.682, lowest); motivation is the core driver" data-cn="&lt;strong&gt;移除欲望模块：&lt;/strong&gt;内容层退化最严重（Confr. → 0.682，最低）；动机约束是核心驱动力"><strong>w/o Desire:</strong> Content layer degrades most severely (Confr. &rarr; 0.682, lowest); motivation is the core driver</li>
-            <li data-en="&lt;strong&gt;w/o Intention:&lt;/strong&gt; Lexical diversity worsens most (0.064); three-level CoT critical for diversity and topology" data-cn="&lt;strong&gt;移除意图模块：&lt;/strong&gt;词汇多样性偏差恶化最大（0.064）；三级思维链对多样性和拓扑至关重要"><strong>w/o Intention:</strong> Lexical diversity worsens most (0.064); three-level CoT critical for diversity and topology</li>
+            <li data-en="&lt;strong&gt;w/o coupling:&lt;/strong&gt; Act.ρ falls from 0.809 to 0.235 (−70.9%) while Irrat. Sim. barely changes (−0.4%)." data-cn="&lt;strong&gt;移除时间耦合：&lt;/strong&gt;Act.ρ 从 0.809 降至 0.235（−70.9%），Irrat. Sim. 几乎不变（−0.4%）。"><strong>w/o coupling:</strong> Act.ρ falls from 0.809 to 0.235 (−70.9%) while Irrat. Sim. barely changes (−0.4%).</li>
+            <li data-en="&lt;strong&gt;w/o desire:&lt;/strong&gt; Irrat. Sim. falls by 13.7% while Act.ρ falls by only 3.7%." data-cn="&lt;strong&gt;移除欲望层：&lt;/strong&gt;Irrat. Sim. 下降 13.7%，Act.ρ 仅下降 3.7%。"><strong>w/o desire:</strong> Irrat. Sim. falls by 13.7% while Act.ρ falls by only 3.7%.</li>
+            <li data-en="&lt;strong&gt;Timing is an environment property:&lt;/strong&gt; a rule-based agent with no language model but with the Time Engine reaches ρ = 0.808; the external stimulus alone gives 0.711 and the internal stimulus alone 0.294." data-cn="&lt;strong&gt;时间一致性来自环境：&lt;/strong&gt;不含语言模型但保留时间引擎的规则智能体达到 ρ = 0.808；仅外部激励为 0.711，仅内部激励为 0.294。"><strong>Timing is an environment property:</strong> a rule-based agent with no language model but with the Time Engine reaches ρ = 0.808; the external stimulus alone gives 0.711 and the internal stimulus alone 0.294.</li>
+            <li data-en="&lt;strong&gt;Topology:&lt;/strong&gt; every ablation costs 2–9% of network and cascade similarity, and no single removal accounts for the loss." data-cn="&lt;strong&gt;拓扑：&lt;/strong&gt;每项消融都使网络与级联相似度下降 2–9%，没有单一组件起决定作用。"><strong>Topology:</strong> every ablation costs 2–9% of network and cascade similarity, and no single removal accounts for the loss.</li>
           </ul>
         </div>
       </div>
@@ -609,33 +613,27 @@
           <img src="paper_cognitive_priming.png" alt="Cognitive Priming Experiment" onclick="openLightbox(this)" style="cursor:pointer;">
           <div class="case-card-body">
             <h4 data-en="Case 1 &middot; Cognitive Priming Experiment" data-cn="案例一 &middot; 认知引导实验">Case 1 &middot; Cognitive Priming Experiment</h4>
-            <p data-en="200 agents, 30 simulation steps. Two cognitive priming strategies applied at varying coverage rates (20%–100%)." data-cn="200 个智能体，30 步仿真。两种认知引导策略在 20%–100% 覆盖率下对比。">200 agents, 30 simulation steps. Two cognitive priming strategies applied at varying coverage rates (20%&ndash;100%).</p>
+            <p data-en="From a shared checkpoint after an outbreak in LE, the psychological belief layer of 30%, 60%, or 100% of agents is rewritten toward rational cognition (RC), empathy priming (EP), or emotional regulation (ER), and compared with a no-intervention control." data-cn="从 LE 爆发后的同一检查点出发，将 30%、60% 或 100% 智能体的心理信念层改写为理性认知（RC）、共情引导（EP）或情绪调节（ER），并与无干预对照比较。">From a shared checkpoint after an outbreak in LE, the psychological belief layer of 30%, 60%, or 100% of agents is rewritten toward rational cognition (RC), empathy priming (EP), or emotional regulation (ER), and compared with a no-intervention control.</p>
             <div class="highlight-box" style="margin:12px 0;border-left-color:#8b5cf6;">
-              <p style="font-size:0.85rem;line-height:1.6;" data-en="&lt;strong&gt;Rational Cognition (RC):&lt;/strong&gt; Negative emotion drops from 0.844 → 0.571 (&lt;strong&gt;−32.3%&lt;/strong&gt;). Effect monotonically increases with coverage." data-cn="&lt;strong&gt;理性认知引导(RC)：&lt;/strong&gt;负面情绪从 0.844 降至 0.571（&lt;strong&gt;降幅 32.3%&lt;/strong&gt;），效果随覆盖率单调递增。">
-                <strong>Rational Cognition (RC):</strong> Negative emotion drops from 0.844 &rarr; 0.571 (<strong>&minus;32.3%</strong>). Effect monotonically increases with coverage.
-              </p>
+              <p style="font-size:0.85rem;line-height:1.6;" data-en="&lt;strong&gt;Rational cognition and emotional regulation:&lt;/strong&gt; the negative emotion ratio falls from 0.844 to 0.571 (RC) and 0.572 (ER) at full coverage, decreasing monotonically with coverage." data-cn="&lt;strong&gt;理性认知与情绪调节：&lt;/strong&gt;全覆盖时负面情绪比例从 0.844 降至 0.571（RC）和 0.572（ER），且随覆盖率单调下降。"><strong>Rational cognition and emotional regulation:</strong> the negative emotion ratio falls from 0.844 to 0.571 (RC) and 0.572 (ER) at full coverage, decreasing monotonically with coverage.</p>
             </div>
             <div class="highlight-box" style="margin:12px 0;border-left-color:#f59e0b;">
-              <p style="font-size:0.85rem;line-height:1.6;" data-en="&lt;strong&gt;Empathy Priming (EP):&lt;/strong&gt; Counterintuitive &lt;em&gt;empathy paradox&lt;/em&gt; — negative emotion &lt;em&gt;increases&lt;/em&gt; (0.878 vs 0.844). Deep understanding of others' suffering amplifies rather than mitigates negative sentiment." data-cn="&lt;strong&gt;共情引导(EP)：&lt;/strong&gt;出现反直觉的&lt;em&gt;共情悖论&lt;/em&gt;——负面情绪反而&lt;em&gt;升高&lt;/em&gt;（0.878 vs 0.844）。对他人痛苦的深度共情放大了负面情绪而非缓解。">
-                <strong>Empathy Priming (EP):</strong> Counterintuitive <em>empathy paradox</em> — negative emotion <em>increases</em> (0.878 vs 0.844). Deep understanding of others' suffering amplifies rather than mitigates negative sentiment.
-              </p>
+              <p style="font-size:0.85rem;line-height:1.6;" data-en="&lt;strong&gt;Empathy priming:&lt;/strong&gt; the negative emotion ratio rises with coverage. It stays below the control at 30% and 60% (0.794, 0.806) and exceeds it only at 100% (0.878 vs. 0.844), while the anger ratio stays below the control. The experiment covers one crisis, one checkpoint, and one formulation of each edit." data-cn="&lt;strong&gt;共情引导：&lt;/strong&gt;负面情绪比例随覆盖率上升，在 30% 和 60% 时仍低于对照（0.794、0.806），仅在 100% 时超过对照（0.878 vs. 0.844），愤怒比例始终低于对照。该实验仅覆盖一个事件、一个检查点和每种改写的一种表述。"><strong>Empathy priming:</strong> the negative emotion ratio rises with coverage. It stays below the control at 30% and 60% (0.794, 0.806) and exceeds it only at 100% (0.878 vs. 0.844), while the anger ratio stays below the control. The experiment covers one crisis, one checkpoint, and one formulation of each edit.</p>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;" data-en="Coverage crossing 60% shows a clear &lt;strong&gt;threshold effect&lt;/strong&gt; — below this point, priming barely propagates through social networks." data-cn="覆盖率跨越 60% 后呈现清晰&lt;strong&gt;阈值效应&lt;/strong&gt;——低于此阈值，引导效果几乎无法在社交网络中传播。">Coverage crossing 60% shows a clear <strong>threshold effect</strong> — below this point, priming barely propagates through social networks.</p>
             <div style="margin-top:12px;">
-              <span class="finding-tag" data-en="Empathy Paradox" data-cn="共情悖论">Empathy Paradox</span>
-              <span class="finding-tag" data-en="Threshold Effect" data-cn="阈值效应">Threshold Effect</span>
-              <span class="finding-tag" data-en="Non-linear Diffusion" data-cn="非线性扩散">Non-linear Diffusion</span>
+              <span class="finding-tag" data-en="Cognitive Editing" data-cn="认知编辑">Cognitive Editing</span>
+              <span class="finding-tag" data-en="Coverage-Dependent Effects" data-cn="效果随覆盖率变化">Coverage-Dependent Effects</span>
+              <span class="finding-tag" data-en="Paired Branching" data-cn="配对分支">Paired Branching</span>
             </div>
           </div>
         </div>
       </div>
-
       <!-- Case 2: Counterfactual Strategy Evaluation -->
       <div class="case-card">
         <div class="case-card-inner">
           <div class="case-card-body">
             <h4 data-en="Case 2 &middot; Counterfactual Strategy Evaluation" data-cn="案例二 &middot; 反事实策略评估">Case 2 &middot; Counterfactual Strategy Evaluation</h4>
-            <p data-en="Five PR strategies compared under identical external events on the Luxury-Earring dataset. The Intervenor-Simulator-Evaluator pipeline enables 'what-if' analysis without real-world deployment." data-cn="在天价耳环数据集上对比五种公关策略。干预器-仿真器-评估器流水线支持"假如"分析，无需真实部署。">Five PR strategies compared under identical external events on the Luxury-Earring dataset. The Intervenor-Simulator-Evaluator pipeline enables &ldquo;what-if&rdquo; analysis without real-world deployment.</p>
+            <p data-en="In the Xibei Prepared Food (XF) crisis, five crisis-communication strategies branch from a shared pre-response checkpoint; the external timeline is held fixed and only the company&#39;s response is replaced." data-cn="在西贝预制菜（XF）事件中，五种危机沟通策略从同一个回应前检查点分支；外部事件时间线保持不变，只替换企业的回应。">In the Xibei Prepared Food (XF) crisis, five crisis-communication strategies branch from a shared pre-response checkpoint; the external timeline is held fixed and only the company&#39;s response is replaced.</p>
             <div class="result-table-wrap" style="margin:16px 0;">
               <table class="result-table" style="font-size:0.84rem;">
                 <thead>
@@ -647,24 +645,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td data-en="Actual Response" data-cn="实际应对">Actual Response</td><td>0.792</td><td>0.791</td><td>0.685</td></tr>
-                  <tr><td data-en="Swift Apology" data-cn="及时致歉">Swift Apology</td><td>0.749</td><td>0.749</td><td>0.612</td></tr>
-                  <tr><td data-en="Proactive Transparency" data-cn="主动透明">Proactive Transparency</td><td>0.773</td><td>0.773</td><td>0.645</td></tr>
-                  <tr class="ours-row"><td data-en="Consumer Dialogue" data-cn="消费者对话"><strong>Consumer Dialogue</strong></td><td class="best">0.744</td><td class="best">0.743</td><td class="best">0.598</td></tr>
-                  <tr><td data-en="Strategic Silence" data-cn="战略沉默">Strategic Silence</td><td>0.831</td><td>0.831</td><td>0.702</td></tr>
+                  <tr><td data-en="Actual Response" data-cn="实际应对">Actual Response</td><td>0.792</td><td>0.685</td><td>0.685</td></tr>
+                  <tr><td data-en="Swift Apology" data-cn="及时致歉">Swift Apology</td><td>0.749</td><td>0.621</td><td>0.612</td></tr>
+                  <tr><td data-en="Proactive Transparency" data-cn="主动透明">Proactive Transparency</td><td>0.773</td><td>0.658</td><td>0.645</td></tr>
+                  <tr class="ours-row"><td data-en="Consumer Dialogue" data-cn="消费者对话"><strong>Consumer Dialogue</strong></td><td class="best">0.744</td><td class="best">0.612</td><td class="best">0.598</td></tr>
+                  <tr><td data-en="Strategic Silence" data-cn="战略沉默">Strategic Silence</td><td>0.831</td><td>0.714</td><td>0.702</td></tr>
                 </tbody>
               </table>
             </div>
             <div class="highlight-box" style="margin:12px 0;border-left-color:#10b981;">
-              <p style="font-size:0.85rem;line-height:1.6;" data-en="&lt;strong&gt;Consumer Dialogue&lt;/strong&gt; achieves the best results across all metrics (−6.1% neg. emotion vs actual response). &lt;strong&gt;Strategic Silence&lt;/strong&gt; is the worst — inaction amplifies anger (+4.9%)." data-cn="&lt;strong&gt;消费者对话&lt;/strong&gt;在所有指标上效果最优（负面情绪较实际应对降低 6.1%）。&lt;strong&gt;战略沉默&lt;/strong&gt;效果最差——不作为会加剧愤怒（+4.9%）。">
-                <strong>Consumer Dialogue</strong> achieves the best results across all metrics (&minus;6.1% neg. emotion vs actual response). <strong>Strategic Silence</strong> is the worst — inaction amplifies anger (+4.9%).
-              </p>
+              <p style="font-size:0.85rem;line-height:1.6;" data-en="&lt;strong&gt;Consumer Dialogue&lt;/strong&gt; is best on all three measures (−6.1% negative emotion vs. the actual response), and &lt;strong&gt;Strategic Silence&lt;/strong&gt; is worst on every measure (+4.9%). Because the branches share their pre-response history, the ordering is attributable to the response itself." data-cn="&lt;strong&gt;消费者对话&lt;/strong&gt;在三项指标上均最优（负面情绪比实际应对低 6.1%），&lt;strong&gt;战略沉默&lt;/strong&gt;在各项指标上均最差（+4.9%）。各分支共享回应前的全部历史，因此排序可归因于回应本身。"><strong>Consumer Dialogue</strong> is best on all three measures (&minus;6.1% negative emotion vs. the actual response), and <strong>Strategic Silence</strong> is worst on every measure (+4.9%). Because the branches share their pre-response history, the ordering is attributable to the response itself.</p>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;" data-en="All strategies exhibit an &lt;strong&gt;immediate cooling &amp; gradual rebound&lt;/strong&gt; pattern: intervention triggers initial sentiment relief, but public opinion naturally restores toward baseline as new events unfold." data-cn="所有策略均呈现&lt;strong&gt;即时降温与逐步反弹&lt;/strong&gt;模式：干预触发短期情绪缓解，但随着新事件展开，舆论自然回归基线。">All strategies exhibit an <strong>immediate cooling &amp; gradual rebound</strong> pattern: intervention triggers initial sentiment relief, but public opinion naturally restores toward baseline as new events unfold.</p>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;" data-en="Read as a case study generated under stated assumptions, not as a general communication recommendation." data-cn="这是在给定假设下得到的案例结果，而非通用的沟通建议。">Read as a case study generated under stated assumptions, not as a general communication recommendation.</p>
             <div style="margin-top:12px;">
-              <span class="finding-tag" data-en="Immediate Cooling" data-cn="即时降温">Immediate Cooling</span>
-              <span class="finding-tag" data-en="Gradual Rebound" data-cn="逐步反弹">Gradual Rebound</span>
               <span class="finding-tag" data-en="What-If Analysis" data-cn="假设分析">What-If Analysis</span>
+              <span class="finding-tag" data-en="Shared Checkpoint" data-cn="共享检查点">Shared Checkpoint</span>
             </div>
           </div>
           <div class="case-card-visual" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:32px;background:var(--surface);gap:20px;">
@@ -721,30 +716,22 @@
 ├── <span class="folder">posim/</span>                          <span class="comment"># Core framework</span>
 │   ├── <span class="folder">agents/</span>                     <span class="comment"># Agent module</span>
 │   │   ├── <span class="file">base_agent.py</span>           <span class="comment"># Base class (cognitive pipeline)</span>
-│   │   ├── <span class="file">citizen_agent.py</span>        <span class="comment"># Citizen agent</span>
-│   │   ├── <span class="file">kol_agent.py</span>            <span class="comment"># KOL agent</span>
-│   │   ├── <span class="file">media_agent.py</span>          <span class="comment"># Media agent</span>
-│   │   │   └── <span class="file">government_agent.py</span>     <span class="comment"># Government agent</span>
-│   │   └── <span class="folder">ebdi/</span>                   <span class="comment"># Social-BDI cognitive architecture</span>
-│   │       ├── <span class="folder">belief/</span>             <span class="comment"># Belief subsystem</span>
-│   │       ├── <span class="folder">desire/</span>             <span class="comment"># Desire subsystem</span>
-│   │       ├── <span class="folder">intention/</span>          <span class="comment"># Intention subsystem (3-level CoT)</span>
-│   │       └── <span class="folder">memory/</span>             <span class="comment"># Streaming memory store</span>
-│   ├── <span class="folder">engine/</span>                     <span class="comment"># Simulation engine</span>
-│   │   ├── <span class="file">simulator.py</span>            <span class="comment"># Main loop (async concurrent)</span>
-│   │   ├── <span class="file">hawkes_process.py</span>       <span class="comment"># Hawkes self-exciting process</span>
-│   │   └── <span class="file">time_engine.py</span>          <span class="comment"># Time engine (circadian)</span>
-│   ├── <span class="folder">environment/</span>                <span class="comment"># Virtual social media platform</span>
-│   │   ├── <span class="file">recommendation.py</span>       <span class="comment"># Content recommendation</span>
-│   │   ├── <span class="file">social_network.py</span>       <span class="comment"># Three-layer social network</span>
-│   │   ├── <span class="file">hot_search.py</span>           <span class="comment"># Trending topics</span>
-│   │   └── <span class="file">event_queue.py</span>          <span class="comment"># External event queue</span>
-│   ├── <span class="folder">evaluation/</span>                 <span class="comment"># Evaluation framework</span>
-│   ├── <span class="folder">llm/</span>                        <span class="comment"># LLM resource management</span>
-│   ├── <span class="folder">prompts/</span>                    <span class="comment"># Prompt templates</span>
-│   └── <span class="folder">config/</span>                     <span class="comment"># Configuration</span>
-├── <span class="folder">scripts/</span>                        <span class="comment"># Simulation & evaluation scripts</span>
-├── <span class="folder">data/</span>                           <span class="comment"># Datasets</span>
+│   │   ├── <span class="file">citizen_agent.py</span>        <span class="comment"># Ordinary user</span>
+│   │   ├── <span class="file">kol_agent.py</span>            <span class="comment"># Opinion leader</span>
+│   │   ├── <span class="file">media_agent.py</span>          <span class="comment"># Media account</span>
+│   │   ├── <span class="file">government_agent.py</span>     <span class="comment"># Government account</span>
+│   │   └── <span class="folder">ebdi/</span>                   <span class="comment"># Social-BDI: belief, desire, intention, memory</span>
+│   ├── <span class="folder">engine/</span>                     <span class="comment"># Simulation loop and Hawkes time engine</span>
+│   ├── <span class="folder">environment/</span>                <span class="comment"># Recommendation, networks, trending list, event queue</span>
+│   ├── <span class="folder">llm/</span>                        <span class="comment"># LLM clients and endpoint pool</span>
+│   ├── <span class="folder">prompts/</span>                    <span class="comment"># Role-specific prompt templates</span>
+│   ├── <span class="folder">config/</span>                     <span class="comment"># Configuration</span>
+│   ├── <span class="folder">data/</span>                       <span class="comment"># Data loading</span>
+│   ├── <span class="folder">storage/</span>                    <span class="comment"># Run database and logs</span>
+│   └── <span class="folder">utils/</span>                      <span class="comment"># Helpers</span>
+├── <span class="folder">run_scripts/</span>                    <span class="comment"># Example configs and sample data</span>
+├── <span class="folder">datasets/</span>                       <span class="comment"># De-identified LE / WL / XF datasets</span>
+├── <span class="folder">models/</span>                         <span class="comment"># Local embedding model</span>
 └── <span class="file">requirements.txt</span></pre>
     </div>
   </div>

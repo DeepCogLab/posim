@@ -1,3 +1,5 @@
+"""Main simulation loop."""
+
 import asyncio
 import random
 import logging
@@ -1071,6 +1073,7 @@ class Simulator:
         
         # 添加到霍克斯过程
         elapsed = self.time_engine.elapsed_minutes
+        # agent actions feed back into the Hawkes intensity
         self.hawkes.add_internal_event(elapsed, action_type, action_dict.get('user_id', ''), user_influence)
         
         if self.action_callback:
